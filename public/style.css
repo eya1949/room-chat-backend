@@ -61,13 +61,7 @@ body{
     margin-bottom: 5px;
 }
 
-/* Remove or correct this to prevent conflicts */
-.screen .form-input input {
-    width: 100px;
-    padding: 100px; /* This is likely a mistake */
-    border: 1px solid #555;
-    font-size: 16px;
-}
+
 
 
 .screen .form-input button{
@@ -80,7 +74,7 @@ body{
     border: none;
 }
 
-.chat-screen .header{
+.chat .header{
     background:#111;
     height: 50px;
     display: flex;
@@ -89,13 +83,13 @@ body{
     padding: 0px 20px;
 }
 
-.chat-screen .header .logo{
+.chat .header .logo{
     font-size: 18px;
     color: #eee;
     font-weight: 600;
 }
 
-.chat-screen .header button{
+.chat .header button{
     padding: 5px 10px;
     border: 1px solid #eee;
     background: transparent;
@@ -104,62 +98,62 @@ body{
     outline: none;
 }
 
-.chat-screen .messages{
+.chat  .msg{
     width: 100%;
     height: calc(100% - 15%);
     background: #f5f5f5;
     overflow: auto; 
 }
 
-.chat-screen .messages .message{
+.chat .msg .message{
     display: flex;
     padding: 10px;
 }
 
-.chat-screen .messages .message > div{
+.chat .msg .message > div{
     max-width: 80px;
     background: #fff;
     box-shadow: 0px 0px 20px 5px rgba(0, 0, 0,0.05);
     padding: 10px;
 }
 
-.chat-screen .messages .message.my-message{
+.chat .msg .message.my-message{
     justify-content: flex-end;
 }
 
-.chat-screen .messages .message.other-message{
+.chat .msg .message.other-message{
     justify-content: flex-start;
 }
 
-.chat-screen .messages .message .name{
+.chat .msg .message .name{
     font-size: 13px;
     color: #555;
     margin-bottom: 5px;
 }
 
-.chat-screen .messages .message .text{
+.chat .msg .message .text{
     word-wrap: break-word;
 }
 
-.chat-screen .messages .update{
+.chat .msg .update{
     text-align: center;
     padding: 10px;
     font-style: italic;
 }
 
-.chat-screen .typebox{
+.chat .typebox{
     width: 100%;
     height: 50%;
     display: flex;
 }
 
-.chat-screen .typebox input{
+.chat .typebox input{
     flex: 1;
     height: 50px;
     font-size: 18px;
 }
 
-.chat-screen .typebox button{
+.chat .typebox button{
     width: 80px;
     height: 50px;
     background: #111;

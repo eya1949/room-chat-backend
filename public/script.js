@@ -5,21 +5,21 @@
     let uname;
 
     // Correct the selector for username input and button click event
-    app.querySelector(".join-screen #join-user").addEventListener("click", () => {
+    app.querySelector(".join #join").addEventListener("click", () => {
         // The correct selector to match the input's ID, considering your HTML structure
-        let username = app.querySelector(".join-screen #username").value; // Assuming the input's ID is 'Username' with an uppercase 'U'
+        let username = app.querySelector(".join #Username").value; // Assuming the input's ID is 'Username' with an uppercase 'U'
         if (username.length === 0) {
             return;
         }
         socket.emit("newuser", username);
         uname = username;
-        app.querySelector(".join-screen").classList.remove("active");
-        app.querySelector(".chat-screen").classList.add("active");
+        app.querySelector(".join").classList.remove("active");
+        app.querySelector(".chat").classList.add("active");
     });
 
-    // Event listener for sending messages
-    app.querySelector(".chat-screen #send-message").addEventListener("click", () => {
-        let message = app.querySelector(".chat-screen #message-input").value;
+    // Event listener for sending msg
+    app.querySelector(".chat #send-message").addEventListener("click", () => {
+        let message = app.querySelector(".chat #message-input").value;
         if (message.length == 0) {
             return;
         }
@@ -31,10 +31,10 @@
             username: uname,
             text: message
         });
-        app.querySelector(".chat-screen #message-input").value = "";
+        app.querySelector(".chat #message-input").value = "";
     });
 
-    app.querySelector(".chat-screen #exit-chat").addEventListener("click", () => {
+    app.querySelector(".chat #exit-chat").addEventListener("click", () => {
         socket.emit("exituser", uname);
         window.location.href = window.location.href;
     })
@@ -50,9 +50,9 @@
         }
     });
 
-    // Function to render messages
+    // Function to render msg
     function renderMessage(type, message) {
-        let messageContainer = app.querySelector(".chat-screen .messages");        // Ensure this selects the container that holds all messages
+        let messageContainer = app.querySelector(".chat .msg");        // Ensure this selects the container that holds all msg
         let el = document.createElement("div");
         if (type === "my") {
             el.setAttribute("class", "message my-message");
